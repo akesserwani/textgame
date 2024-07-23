@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5120D4CB2C4FC39400AC7D13 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5120D4CA2C4FC39400AC7D13 /* ItemsTableViewController.swift */; };
 		51C095DD2C4E63F200871780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C095DC2C4E63F200871780 /* AppDelegate.swift */; };
 		51C095DF2C4E63F200871780 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C095DE2C4E63F200871780 /* SceneDelegate.swift */; };
 		51C095E12C4E63F200871780 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C095E02C4E63F200871780 /* ViewController.swift */; };
@@ -15,11 +16,11 @@
 		51C095E92C4E63F300871780 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 51C095E82C4E63F300871780 /* Base */; };
 		51C095F12C4E696200871780 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C095F02C4E696200871780 /* HomeViewController.swift */; };
 		51C095F32C4E69EF00871780 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C095F22C4E69EF00871780 /* ItemsViewController.swift */; };
-		51C095F52C4E6A5600871780 /* MissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C095F42C4E6A5600871780 /* MissionsViewController.swift */; };
 		51C095F72C4E711A00871780 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C095F62C4E711A00871780 /* StoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5120D4CA2C4FC39400AC7D13 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		51C095D92C4E63F200871780 /* textgame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = textgame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C095DC2C4E63F200871780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51C095DE2C4E63F200871780 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		51C095EA2C4E63F300871780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51C095F02C4E696200871780 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		51C095F22C4E69EF00871780 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
-		51C095F42C4E6A5600871780 /* MissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsViewController.swift; sourceTree = "<group>"; };
 		51C095F62C4E711A00871780 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,8 +73,8 @@
 				51C095EA2C4E63F300871780 /* Info.plist */,
 				51C095F02C4E696200871780 /* HomeViewController.swift */,
 				51C095F22C4E69EF00871780 /* ItemsViewController.swift */,
-				51C095F42C4E6A5600871780 /* MissionsViewController.swift */,
 				51C095F62C4E711A00871780 /* StoreViewController.swift */,
+				5120D4CA2C4FC39400AC7D13 /* ItemsTableViewController.swift */,
 			);
 			path = textgame;
 			sourceTree = "<group>";
@@ -153,10 +153,10 @@
 				51C095F32C4E69EF00871780 /* ItemsViewController.swift in Sources */,
 				51C095E12C4E63F200871780 /* ViewController.swift in Sources */,
 				51C095DD2C4E63F200871780 /* AppDelegate.swift in Sources */,
-				51C095F52C4E6A5600871780 /* MissionsViewController.swift in Sources */,
 				51C095DF2C4E63F200871780 /* SceneDelegate.swift in Sources */,
 				51C095F12C4E696200871780 /* HomeViewController.swift in Sources */,
 				51C095F72C4E711A00871780 /* StoreViewController.swift in Sources */,
+				5120D4CB2C4FC39400AC7D13 /* ItemsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
