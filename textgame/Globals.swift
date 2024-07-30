@@ -7,15 +7,17 @@
 
 import Foundation
 
+// Struct to represent a store item
 struct StoreItem {
-    var description: String
-    var action: String
-    var price: Int
+    var description: String // Description of the item
+    var action: String // Action associated with the item
+    var price: Int // Price of the item
 }
 
+// Struct to hold global game variables
 struct Globals {
     
-    //variables for the store items
+    // Dictionary of store items with their names as keys
     static let storeItems: [String: StoreItem] = [
         "Repair Ship": StoreItem(
             description: "Restore the ship's condition to 100%.",
@@ -36,20 +38,16 @@ struct Globals {
         
         "Chef": StoreItem(description: "A good night's meal sure can make the crew happy and cut costs with food. Hiring a chef can increase the crews satisfaction by 5% and reduce the cost of food and drink by 20%.", action: "Recruit a Chef", price: 400)
     ]
-
     
-    //variables to be updated throughout the game
-    //my money variable - starts of with 200 gold
+    // Initial amount of gold the player starts with
     static var goldAmount: Int = 200
     
-    //ship condition variable - starts with 100%
+    // Initial ship condition
     static var shipCondition: Int = 100
 
-    //crew satisfaction variable - starts with 100%
+    // Initial crew satisfaction
     static var crewSatisfaction: Int = 100
     
-    //If extra time left add reputation variable
-    //reputation variable - starts with 60%
-    //static var reputation: Int = 60
-
+    // (Optional) Reputation variable can be added here if needed in the future
+    // static var reputation: Int = 60
 }

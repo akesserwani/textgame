@@ -22,10 +22,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="missionCell" id="vuN-h6-Fc4">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vuN-h6-Fc4" id="aTW-Le-80b">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -58,51 +58,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold: 500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IP-RX-OxU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gold: 500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IP-RX-OxU">
                                 <rect key="frame" x="16" y="132" width="81" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ship Condition: 100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpa-ZX-1kX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ship Condition: 100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpa-ZX-1kX">
                                 <rect key="frame" x="16" y="161" width="177" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" systemColor="systemBrownColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reputation: 100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIc-BT-6n9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reputation: 100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIc-BT-6n9">
                                 <rect key="frame" x="16" y="190" width="147" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" systemColor="systemTealColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Crew Satisfaction:  100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZR-5x-rsY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crew Satisfaction:  100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZR-5x-rsY">
                                 <rect key="frame" x="16" y="219" width="206" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1T2-St-OM4">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1T2-St-OM4">
                                 <rect key="frame" x="76" y="721" width="241" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Option number 2: Don't do it">
                                     <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOe-ML-pHt">
-                                <rect key="frame" x="99" y="650" width="195" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOe-ML-pHt">
+                                <rect key="frame" x="99" y="649" width="195" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="lv0-9N-U5g"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Option number 1: Do it"/>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UQA-Ad-8iw">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UQA-Ad-8iw">
                                 <rect key="frame" x="16" y="267" width="361" height="319"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -112,6 +108,25 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nev-k9-NMe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9IP-RX-OxU" firstAttribute="leading" secondItem="CRv-5V-2A2" secondAttribute="leadingMargin" id="6HD-dO-TQ8"/>
+                            <constraint firstItem="UQA-Ad-8iw" firstAttribute="trailing" secondItem="CRv-5V-2A2" secondAttribute="trailingMargin" id="97k-QS-ppo"/>
+                            <constraint firstItem="mpa-ZX-1kX" firstAttribute="leading" secondItem="aIc-BT-6n9" secondAttribute="leading" id="F4K-g1-1Ro"/>
+                            <constraint firstItem="aIc-BT-6n9" firstAttribute="top" secondItem="mpa-ZX-1kX" secondAttribute="bottom" constant="8" symbolic="YES" id="FPp-ig-ukt"/>
+                            <constraint firstItem="hOe-ML-pHt" firstAttribute="centerX" secondItem="1T2-St-OM4" secondAttribute="centerX" id="Kwy-jc-iFN"/>
+                            <constraint firstItem="Nev-k9-NMe" firstAttribute="bottom" secondItem="1T2-St-OM4" secondAttribute="bottom" constant="58" id="N3t-PI-cr9"/>
+                            <constraint firstItem="vZR-5x-rsY" firstAttribute="leading" secondItem="UQA-Ad-8iw" secondAttribute="leading" id="Py3-w0-doC"/>
+                            <constraint firstItem="aIc-BT-6n9" firstAttribute="leading" secondItem="vZR-5x-rsY" secondAttribute="leading" id="S7q-YJ-7DJ"/>
+                            <constraint firstItem="vZR-5x-rsY" firstAttribute="top" secondItem="aIc-BT-6n9" secondAttribute="bottom" constant="8" symbolic="YES" id="YLb-mv-AYF"/>
+                            <constraint firstItem="UQA-Ad-8iw" firstAttribute="top" secondItem="vZR-5x-rsY" secondAttribute="bottom" constant="27" id="dcd-Nk-guS"/>
+                            <constraint firstItem="UQA-Ad-8iw" firstAttribute="centerY" secondItem="CRv-5V-2A2" secondAttribute="centerY" id="gfS-Fz-ewu"/>
+                            <constraint firstItem="9IP-RX-OxU" firstAttribute="leading" secondItem="mpa-ZX-1kX" secondAttribute="leading" id="hca-Em-jXu"/>
+                            <constraint firstItem="9IP-RX-OxU" firstAttribute="top" secondItem="Nev-k9-NMe" secondAttribute="top" constant="29" id="k5e-CG-kSH"/>
+                            <constraint firstItem="mpa-ZX-1kX" firstAttribute="top" secondItem="9IP-RX-OxU" secondAttribute="bottom" constant="8" symbolic="YES" id="kPT-QX-iHl"/>
+                            <constraint firstItem="UQA-Ad-8iw" firstAttribute="centerX" secondItem="hOe-ML-pHt" secondAttribute="centerX" id="kmn-6d-Lj4"/>
+                            <constraint firstItem="1T2-St-OM4" firstAttribute="top" secondItem="hOe-ML-pHt" secondAttribute="bottom" constant="32" id="pmV-Ca-hVA"/>
+                            <constraint firstItem="hOe-ML-pHt" firstAttribute="top" secondItem="UQA-Ad-8iw" secondAttribute="bottom" constant="64" id="wqS-NT-C8N"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Our Flag Means Text" id="wFn-lB-8IS">
                         <barButtonItem key="leftBarButtonItem" title="Missions" id="8qa-h8-rP0">
@@ -125,6 +140,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="goldLabel" destination="9IP-RX-OxU" id="Rv5-We-VFm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLF-IM-D5J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,10 +170,10 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryCell" id="4am-aD-PAb">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4am-aD-PAb" id="K3z-hs-qXz">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -174,7 +192,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Store" id="HRm-tR-AIP"/>
                     <connections>
-                        <outlet property="storeTable" destination="VUO-AE-65p" id="gR6-bb-Tac"/>
+                        <outlet property="goldLabel" destination="4uS-Ky-9SX" id="DOy-6q-TAZ"/>
+                        <outlet property="storeTable" destination="VUO-AE-65p" id="YpC-nK-bqV"/>
                         <segue destination="eBD-e5-TK9" kind="show" identifier="showDetail" id="4ML-tY-I59"/>
                     </connections>
                 </viewController>
@@ -217,14 +236,14 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Buy"/>
                                 <connections>
-                                    <action selector="buyItem:" destination="eBD-e5-TK9" eventType="touchUpInside" id="Q19-Vy-Wf2"/>
+                                    <action selector="buyItem:" destination="eBD-e5-TK9" eventType="touchUpInside" id="oNl-UB-Q43"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jp3-jh-xA8">
                                 <rect key="frame" x="65" y="214" width="263" height="241"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -235,10 +254,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="rTA-zG-cJf"/>
                     <connections>
-                        <outlet property="itemDescription" destination="jp3-jh-xA8" id="Trc-Ye-i6U"/>
-                        <outlet property="itemPrice" destination="h7B-eg-E2a" id="Wlt-NF-7Cf"/>
-                        <outlet property="itemTitle" destination="oAy-sX-iIu" id="bxD-sT-OxO"/>
-                        <outlet property="myGold" destination="Frq-HZ-qrM" id="UGP-1q-scJ"/>
+                        <outlet property="itemDescription" destination="jp3-jh-xA8" id="Pdg-BG-DLE"/>
+                        <outlet property="itemPrice" destination="h7B-eg-E2a" id="LmV-Fi-PX8"/>
+                        <outlet property="itemTitle" destination="oAy-sX-iIu" id="MmU-mT-E84"/>
+                        <outlet property="myGold" destination="Frq-HZ-qrM" id="75R-Vp-Cbi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfT-tF-kBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -272,19 +291,19 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
