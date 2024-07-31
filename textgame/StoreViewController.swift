@@ -1,18 +1,13 @@
-//
-//  StoreViewController.swift
-//  textgame
-//
-//  Created by Ali Kesserwani on 7/22/24.
-//
-
 import UIKit
-
 
 class StoreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // MARK: - Properties
     @IBOutlet weak var goldLabel: UILabel!
     @IBOutlet weak var storeTable: UITableView!
-    
+    var storeItems: [String: StoreItem] = Globals.storeItems
+
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,21 +32,18 @@ class StoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Remove observer when the view controller is deinitialized
         NotificationCenter.default.removeObserver(self)
     }
-    
-    // Update the gold amount display and reload the store table
+
+    // MARK: - Notification Handling
     @objc func updateGoldAmount() {
         storeTable.reloadData()
         goldLabel.text = "Gold: \(Globals.goldAmount)"
     }
-    
-    var storeItems: [String: StoreItem] = Globals.storeItems
 
-    // Return the number of rows in the table (equal to the number of store items)
+    // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return storeItems.count
     }
     
-    // Configure each cell in the table view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = storeTable.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
         let itemName = Array(storeItems.keys)[indexPath.row]
@@ -66,7 +58,7 @@ class StoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
             print("Is Item Bought: \(isBought)") // Debug print
             
             // Update cell appearance based on whether the item is bought
-            if isBought {
+            if (isBought) {
                 cell.isUserInteractionEnabled = false
                 cell.contentView.alpha = 0.5
             } else {
@@ -77,7 +69,35 @@ class StoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    // Handle item selection in the table view
+    // MARK: - UITableViewDelegate
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let buyAction = UIContextualAction(style: .normal, title: "Buy") { [weak self] (action, view, completionHandler) in
+            self?.handleBuyAction(for: indexPath)
+            completionHandler(true)
+        }
+        buyAction.backgroundColor = .systemGreen
+
+        return UISwipeActionsConfiguration(actions: [buyAction])
+    }
+
+    private func handleBuyAction(for indexPath: IndexPath) {
+        let itemName = Array(storeItems.keys)[indexPath.row]
+        if let item = storeItems[itemName] {
+            if Globals.goldAmount >= item.price {
+                Globals.goldAmount -= item.price
+                showAlert(title: "Success", message: "You bought \(itemName)!")
+            } else {
+                showAlert(title: "Error", message: "Not enough gold.")
+            }
+        }
+    }
+
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let itemName = Array(storeItems.keys)[indexPath.row]
         if LocalStorageManager.shared.isItemBought(itemName) {
@@ -91,8 +111,8 @@ class StoreViewController: UIViewController, UITableViewDelegate, UITableViewDat
             performSegue(withIdentifier: "showDetail", sender: (selectedItem, itemName))
         }
     }
-    
-    // Prepare for segue to the item detail view controller
+
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let destinationVC = segue.destination as? ItemDetailViewController,
