@@ -7,14 +7,27 @@
 
 import UIKit
 
+// View Controller for the home screen
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var goldLabel: UILabel! // Label to display current gold amount
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Loaded")
-        // Do any additional setup after loading the view.
+        updateGoldLabel() // Set initial gold amount
+        // Observe changes to the gold amount
+        NotificationCenter.default.addObserver(self, selector: #selector(updateGoldLabel), name: Notification.Name("GoldAmountUpdated"), object: nil)
     }
-    
+
+    deinit {
+        // Remove observer when the view controller is deinitialized
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    // Update the gold label with the current amount
+    @objc func updateGoldLabel() {
+        goldLabel.text = "Gold: \(Globals.goldAmount)"
+    }
 
     /*
     // MARK: - Navigation
@@ -25,5 +38,4 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

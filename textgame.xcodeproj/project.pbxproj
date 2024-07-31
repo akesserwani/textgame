@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1D17572C58C8C50000C9C5 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D17562C58C8C50000C9C5 /* LocalStorageManager.swift */; };
 		51C095DD2C4E63F200871780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C095DC2C4E63F200871780 /* AppDelegate.swift */; };
 		51C095DF2C4E63F200871780 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C095DE2C4E63F200871780 /* SceneDelegate.swift */; };
 		51C095E12C4E63F200871780 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C095E02C4E63F200871780 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D1D17562C58C8C50000C9C5 /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
 		51C095D92C4E63F200871780 /* textgame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = textgame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C095DC2C4E63F200871780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51C095DE2C4E63F200871780 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				51C095EA2C4E63F300871780 /* Info.plist */,
 				51C095F02C4E696200871780 /* HomeViewController.swift */,
 				51C095F62C4E711A00871780 /* StoreViewController.swift */,
+				0D1D17562C58C8C50000C9C5 /* LocalStorageManager.swift */,
 				51FE22FD2C50F9B30052BB27 /* MissionViewController.swift */,
 				51FE22FF2C51037F0052BB27 /* ItemDetailViewController.swift */,
 				51FE23032C5114990052BB27 /* Globals.swift */,
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D1D17572C58C8C50000C9C5 /* LocalStorageManager.swift in Sources */,
 				51C095E12C4E63F200871780 /* ViewController.swift in Sources */,
 				51FE23002C51037F0052BB27 /* ItemDetailViewController.swift in Sources */,
 				51C095DD2C4E63F200871780 /* AppDelegate.swift in Sources */,
