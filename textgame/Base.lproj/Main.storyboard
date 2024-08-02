@@ -14,18 +14,18 @@
             <objects>
                 <viewController id="9P2-1Y-PKI" customClass="MissionViewController" customModule="textgame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qc8-6O-YOe">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ctb-yH-FKK">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="missionCell" id="vuN-h6-Fc4">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vuN-h6-Fc4" id="aTW-Le-80b">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -44,6 +44,7 @@
                     <navigationItem key="navigationItem" title="Missions" id="dDH-5l-N8g"/>
                     <connections>
                         <outlet property="missionsTable" destination="Ctb-yH-FKK" id="DlH-d6-n1B"/>
+                        <segue destination="Vrg-tl-OW0" kind="show" identifier="showHomeView" id="v2E-BJ-wsm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbp-rx-wsV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -55,29 +56,17 @@
             <objects>
                 <viewController id="Vrg-tl-OW0" customClass="HomeViewController" customModule="textgame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CRv-5V-2A2">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gold: 500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IP-RX-OxU">
-                                <rect key="frame" x="16" y="132" width="81" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Gold: 500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IP-RX-OxU">
+                                <rect key="frame" x="16" y="110" width="81" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ship Condition: 100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpa-ZX-1kX">
-                                <rect key="frame" x="16" y="161" width="177" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" systemColor="systemBrownColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reputation: 100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIc-BT-6n9">
-                                <rect key="frame" x="16" y="190" width="147" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" systemColor="systemTealColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crew Satisfaction:  100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZR-5x-rsY">
-                                <rect key="frame" x="16" y="219" width="206" height="21"/>
+                                <rect key="frame" x="16" y="184" width="206" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -88,16 +77,22 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Option number 2: Don't do it">
                                     <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="option2:" destination="Vrg-tl-OW0" eventType="touchUpInside" id="3hG-gk-TSh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOe-ML-pHt">
-                                <rect key="frame" x="99" y="649" width="195" height="39"/>
+                                <rect key="frame" x="99" y="674" width="195" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="lv0-9N-U5g"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Option number 1: Do it"/>
+                                <connections>
+                                    <action selector="option1:" destination="Vrg-tl-OW0" eventType="touchUpInside" id="cXn-2i-ieg"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UQA-Ad-8iw">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UQA-Ad-8iw">
                                 <rect key="frame" x="16" y="267" width="361" height="319"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -105,19 +100,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ship Condition: 100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpa-ZX-1kX">
+                                <rect key="frame" x="16" y="147" width="177" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" systemColor="systemBrownColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nev-k9-NMe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vZR-5x-rsY" firstAttribute="leading" secondItem="mpa-ZX-1kX" secondAttribute="leading" id="1ip-Ju-ORI"/>
                             <constraint firstItem="9IP-RX-OxU" firstAttribute="leading" secondItem="CRv-5V-2A2" secondAttribute="leadingMargin" id="6HD-dO-TQ8"/>
                             <constraint firstItem="UQA-Ad-8iw" firstAttribute="trailing" secondItem="CRv-5V-2A2" secondAttribute="trailingMargin" id="97k-QS-ppo"/>
-                            <constraint firstItem="mpa-ZX-1kX" firstAttribute="leading" secondItem="aIc-BT-6n9" secondAttribute="leading" id="F4K-g1-1Ro"/>
-                            <constraint firstItem="aIc-BT-6n9" firstAttribute="top" secondItem="mpa-ZX-1kX" secondAttribute="bottom" constant="8" symbolic="YES" id="FPp-ig-ukt"/>
                             <constraint firstItem="hOe-ML-pHt" firstAttribute="centerX" secondItem="1T2-St-OM4" secondAttribute="centerX" id="Kwy-jc-iFN"/>
                             <constraint firstItem="Nev-k9-NMe" firstAttribute="bottom" secondItem="1T2-St-OM4" secondAttribute="bottom" constant="58" id="N3t-PI-cr9"/>
                             <constraint firstItem="vZR-5x-rsY" firstAttribute="leading" secondItem="UQA-Ad-8iw" secondAttribute="leading" id="Py3-w0-doC"/>
-                            <constraint firstItem="aIc-BT-6n9" firstAttribute="leading" secondItem="vZR-5x-rsY" secondAttribute="leading" id="S7q-YJ-7DJ"/>
-                            <constraint firstItem="vZR-5x-rsY" firstAttribute="top" secondItem="aIc-BT-6n9" secondAttribute="bottom" constant="8" symbolic="YES" id="YLb-mv-AYF"/>
                             <constraint firstItem="UQA-Ad-8iw" firstAttribute="top" secondItem="vZR-5x-rsY" secondAttribute="bottom" constant="27" id="dcd-Nk-guS"/>
                             <constraint firstItem="UQA-Ad-8iw" firstAttribute="centerY" secondItem="CRv-5V-2A2" secondAttribute="centerY" id="gfS-Fz-ewu"/>
                             <constraint firstItem="9IP-RX-OxU" firstAttribute="leading" secondItem="mpa-ZX-1kX" secondAttribute="leading" id="hca-Em-jXu"/>
@@ -141,7 +139,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="crewSatisfaction" destination="vZR-5x-rsY" id="fO4-Bz-zbJ"/>
+                        <outlet property="dialogueText" destination="UQA-Ad-8iw" id="oAS-ka-eKL"/>
                         <outlet property="goldLabel" destination="9IP-RX-OxU" id="Rv5-We-VFm"/>
+                        <outlet property="option1" destination="hOe-ML-pHt" id="25Z-zg-uDE"/>
+                        <outlet property="shipCondition" destination="mpa-ZX-1kX" id="f5S-bk-T2j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLF-IM-D5J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -153,27 +155,27 @@
             <objects>
                 <viewController id="l7F-Kj-G0M" customClass="StoreViewController" customModule="textgame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ffv-Ok-d5e">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gold: 500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uS-Ky-9SX">
-                                <rect key="frame" x="16" y="137" width="80.666666666666671" height="21"/>
+                                <rect key="frame" x="16" y="161" width="80.666666666666671" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VUO-AE-65p">
-                                <rect key="frame" x="0.0" y="188" width="393" height="630"/>
+                                <rect key="frame" x="0.0" y="212" width="393" height="630"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="630" id="qvC-eF-dz2"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryCell" id="4am-aD-PAb">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4am-aD-PAb" id="K3z-hs-qXz">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -206,7 +208,7 @@
             <objects>
                 <viewController id="eBD-e5-TK9" customClass="ItemDetailViewController" customModule="textgame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sik-gM-wlw">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fruits and Vegetables" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAy-sX-iIu">
@@ -283,6 +285,10 @@
             <point key="canvasLocation" x="-654.19847328244271" y="-4.2253521126760569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="lan-rt-xdY"/>
+        <segue reference="v2E-BJ-wsm"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -291,19 +297,16 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
