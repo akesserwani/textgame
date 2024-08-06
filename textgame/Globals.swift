@@ -40,13 +40,55 @@ struct Globals {
     ]
     
     // Initial amount of gold the player starts with
-    static var goldAmount: Int = 200
+    static var goldAmount: Int = 200 {
+        didSet {
+            saveGameState()
+        }
+    }
     
     // Initial ship condition
-    static var shipCondition: Int = 100
+    static var shipCondition: Int = 100{
+        didSet {
+            saveGameState()
+        }
+    }
 
     // Initial crew satisfaction
-    static var crewSatisfaction: Int = 100
+    static var crewSatisfaction: Int = 100{
+        didSet {
+            saveGameState()
+        }
+    }
+    
+    // Save game state to UserDefaults
+    private static func saveGameState() {
+        let defaults = UserDefaults.standard
+        defaults.set(goldAmount, forKey: "goldAmount")
+        defaults.set(shipCondition, forKey: "shipCondition")
+        defaults.set(crewSatisfaction, forKey: "crewSatisfaction")
+    }
+    
+    // Load game state from UserDefaults
+    static func loadGameState() {
+        let defaults = UserDefaults.standard
+        goldAmount = defaults.integer(forKey: "goldAmount")
+        shipCondition = defaults.integer(forKey: "shipCondition")
+        crewSatisfaction = defaults.integer(forKey: "crewSatisfaction")
+    }
+    
+    // Optionally, you can initialize defaults if they are not set
+    static func initializeDefaults() {
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: "goldAmount") == nil {
+            defaults.set(200, forKey: "goldAmount")
+        }
+        if defaults.object(forKey: "shipCondition") == nil {
+            defaults.set(100, forKey: "shipCondition")
+        }
+        if defaults.object(forKey: "crewSatisfaction") == nil {
+            defaults.set(100, forKey: "crewSatisfaction")
+        }
+    }
     
     // (Optional) Reputation variable can be added here if needed in the future
     // static var reputation: Int = 60

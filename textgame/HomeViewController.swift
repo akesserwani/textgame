@@ -36,6 +36,8 @@ class HomeViewController: UIViewController {
         
         dialogueText.isEditable = false
         dialogueText.isSelectable = false
+        
+        Globals.loadGameState()
 
         //Check to see what game is loaded from the Missions options
         if mission == "Raid Ships"{
