@@ -28,7 +28,7 @@ struct Globals {
         
         "Galleon": StoreItem(description: "The Galleon is the second largest ship in the game. Upgrading to the Galleon can increase chances of victory by 5-10%", action: "Upgrade to Galleon", price: 2000),
         
-        "Meat": StoreItem(description: "The men at times crave good protein. By meat to strengthen the crewmembers and make them happy. Buying a supply of meat will restore 10% to crew satisfaction and increase the chances of ship combat victory by 5% for THREE battles.", action: "Supply of Meat", price: 300),
+        "Meat": StoreItem(description: "The men at times crave good protein. Buy meat to strengthen the crewmembers and make them happy. Buying a supply of meat will restore 10% to crew satisfaction and increase the chances of ship combat victory by 5% for THREE battles.", action: "Supply of Meat", price: 300),
         
         "Rum": StoreItem(description: "Boost morale among the men. A good night of drinks will sure make them happy. A supply of rum can restore 10-20% of crew satisfaction.", action: "Supply of Rum", price: 200),
         
@@ -59,6 +59,13 @@ struct Globals {
             saveGameState()
         }
     }
+    static var shipType: String = "standard"{
+        didSet{
+            saveGameState()
+        }
+    }
+    
+
     
     // Save game state to UserDefaults
     private static func saveGameState() {
@@ -66,6 +73,7 @@ struct Globals {
         defaults.set(goldAmount, forKey: "goldAmount")
         defaults.set(shipCondition, forKey: "shipCondition")
         defaults.set(crewSatisfaction, forKey: "crewSatisfaction")
+        defaults.set(shipType, forKey: "shipType")
     }
     
     // Load game state from UserDefaults
@@ -74,6 +82,7 @@ struct Globals {
         goldAmount = defaults.integer(forKey: "goldAmount")
         shipCondition = defaults.integer(forKey: "shipCondition")
         crewSatisfaction = defaults.integer(forKey: "crewSatisfaction")
+        shipType = defaults.string(forKey: "shipType") ?? "standard"
     }
     
     // Optionally, you can initialize defaults if they are not set
@@ -93,3 +102,6 @@ struct Globals {
     // (Optional) Reputation variable can be added here if needed in the future
     // static var reputation: Int = 60
 }
+
+
+

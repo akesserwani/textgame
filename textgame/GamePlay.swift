@@ -6,10 +6,102 @@
 //
 
 import Foundation
+struct RaidOutcome {
+    var success: Bool
+    var reward: Int?
+    var penalties: (condition: Int, satisfaction: Int, goldLoss: Int)?
+}
+
+// Extend Globals to store the current ship type being raided
+extension Globals {
+    static var currentShipType: ShipType?
+}
+
+// Function to handle raid outcome
+func handleRaidOutcome(for shipType: ShipType) -> RaidOutcome {
+    let successRate = Int.random(in: 0...100)
+    let success = successRate <= shipType.rateRange.upperBound
+    
+    if success {
+        let reward = Int.random(in: shipType.rewardRange)
+        return RaidOutcome(success: true, reward: reward, penalties: nil)
+    } else {
+        let conditionLoss = Int.random(in: shipType.penaltyConditionRange)
+        let satisfactionLoss = Int.random(in: shipType.penaltySatisfactionRange)
+        let goldLossPercentage = Int.random(in: shipType.penaltyGoldLossRange)
+        let goldLoss = (Globals.goldAmount * goldLossPercentage) / 100
+        return RaidOutcome(success: false, reward: nil, penalties: (conditionLoss, satisfactionLoss, goldLoss))
+    }
+}
+
+// Define the ship types
+struct ShipType {
+    var name: String
+    var rateRange: ClosedRange<Int>
+    var rewardRange: ClosedRange<Int>
+    var penaltyConditionRange: ClosedRange<Int>
+    var penaltySatisfactionRange: ClosedRange<Int>
+    var penaltyGoldLossRange: ClosedRange<Int>
+}
+
+let shipTypes: [ShipType] = [
+    ShipType(name: "Royal Warship", rateRange: 2...20, rewardRange: 100...500, penaltyConditionRange: 20...50, penaltySatisfactionRange: 20...50, penaltyGoldLossRange: 50...70),
+    ShipType(name: "Royal Merchant", rateRange: 10...30, rewardRange: 50...300, penaltyConditionRange: 10...40, penaltySatisfactionRange: 10...40, penaltyGoldLossRange: 30...40),
+    ShipType(name: "Pirate Ship", rateRange: 10...50, rewardRange: 50...150, penaltyConditionRange: 10...30, penaltySatisfactionRange: 10...30, penaltyGoldLossRange: 20...40),
+    ShipType(name: "Fishing Boat", rateRange: 60...90, rewardRange: 10...100, penaltyConditionRange: 5...20, penaltySatisfactionRange: 5...20, penaltyGoldLossRange: 10...15)
+]
 
 struct GameState {
     var dialogue: String
     var options: [String: (nextState: String, actions: [() -> Void])]
+}
+
+func raidShipsGameData() -> [String: GameState] {
+    var gameData: [String: GameState] = [:]
+    
+    // Start state
+    gameData["start"] = GameState(dialogue: "Do you want to raid ships?", options: [
+        "Yes": ("raid_choose_ship", []),
+        "No": ("raid_no", [])
+    ])
+    
+    // Choose ship type to raid
+    var raidChooseShipOptions: [String: (nextState: String, actions: [() -> Void])] = [:]
+    for shipType in shipTypes {
+        raidChooseShipOptions[shipType.name] = ("raid_outcome", [{ Globals.currentShipType = shipType }])
+    }
+    gameData["raid_choose_ship"] = GameState(dialogue: "Choose a ship to raid:", options: raidChooseShipOptions)
+    
+    // Raid outcome
+    gameData["raid_outcome"] = GameState(dialogue: {
+        let currentShipType = Globals.currentShipType!
+        let outcome = handleRaidOutcome(for: currentShipType)
+        
+        if outcome.success {
+            Globals.goldAmount += outcome.reward!
+            return "You successfully raided the \(currentShipType.name)! You gained \(outcome.reward!) gold."
+        } else {
+            Globals.shipCondition -= outcome.penalties!.condition
+            Globals.crewSatisfaction -= outcome.penalties!.satisfaction
+            Globals.goldAmount -= outcome.penalties!.goldLoss
+            return "You lost the battle against the \(currentShipType.name). Your ship condition decreased by \(outcome.penalties!.condition)%, crew satisfaction decreased by \(outcome.penalties!.satisfaction)%, and you lost \(outcome.penalties!.goldLoss) gold."
+        }
+    }(), options: [
+        "Restart": ("start", [])
+    ])
+    
+    // No raid state
+    gameData["raid_no"] = GameState(dialogue: "You decided not to raid ships.", options: [
+        "Try Again": ("start", []),
+        "Exit": ("exit", [])
+    ])
+    
+    // Exit state
+    gameData["exit"] = GameState(dialogue: "You have exited the game.", options: [
+        "Restart": ("start", [])
+    ])
+    
+    return gameData
 }
 
 class GamePlay {
@@ -44,39 +136,9 @@ class GamePlay {
         Globals.crewSatisfaction += randomAmount
     }
 
-    // Function to return game data for "Raid Ships"
     static func raidShipsGame() -> [String: GameState] {
-        return [
-            "start": GameState(dialogue: "Do you want to raid ships?", options: [
-                "Yes": ("raid_start", [{}, { print("Raiding Ships Started!") }]),
-                "No": ("raid_no", [])
-            ]),
-            "raid_start": GameState(dialogue: "You are preparing to raid ships. What do you want to do next?", options: [
-                "Attack": ("raid_attack", [{ print("Attacking...") }]),
-                "Retreat": ("raid_retreat", [])
-            ]),
-            "raid_no": GameState(dialogue: "You decided not to raid ships.", options: [
-                "Try Again": ("start", []),
-                "Exit": ("exit", [])
-            ]),
-            "raid_attack": GameState(dialogue: "You engage in a naval battle.", options: [
-                "Win": ("raid_win", []),
-                "Lose": ("raid_lose", [])
-            ]),
-            "raid_retreat": GameState(dialogue: "You retreat to safety.", options: [
-                "Continue": ("raid_start", [])
-            ]),
-            "raid_win": GameState(dialogue: "You won the battle!", options: [
-                "Restart": ("start", [])
-            ]),
-            "raid_lose": GameState(dialogue: "You lost the battle.", options: [
-                "Restart": ("start", [])
-            ]),
-            "exit": GameState(dialogue: "You have exited the game.", options: [
-                "Restart": ("start", [])
-            ])
-        ]
-    }
+           return raidShipsGameData()
+       }
     
     // Function to return game data for "Search for Treasure"
     static func searchForTreasure() -> [String: GameState] {
