@@ -15,6 +15,12 @@ struct RaidOutcome {
 // Extend Globals to store the current ship type being raided
 extension Globals {
     static var currentShipType: ShipType?
+    static var raidOutcomeDialogue: String? = "Outcome dialogue placeholder"
+}
+
+// notification for updating raid_outcome dialogue on user choice
+extension Notification.Name {
+    static let didUpdateRaidDialogueString = Notification.Name("didUpdateRaidDialogueString")
 }
 
 // Function to handle raid outcome
@@ -68,25 +74,12 @@ func raidShipsGameData() -> [String: GameState] {
     // Choose ship type to raid
     var raidChooseShipOptions: [String: (nextState: String, actions: [() -> Void])] = [:]
     for shipType in shipTypes {
-        raidChooseShipOptions[shipType.name] = ("raid_outcome", [{ Globals.currentShipType = shipType }])
+        raidChooseShipOptions[shipType.name] = ("raid_outcome", [{ Globals.currentShipType = shipType; raidDetermineOutcome() }]) // Execution of outcome dialogue generation on option select
     }
     gameData["raid_choose_ship"] = GameState(dialogue: "Choose a ship to raid:", options: raidChooseShipOptions)
     
     // Raid outcome
-    gameData["raid_outcome"] = GameState(dialogue: {
-        let currentShipType = Globals.currentShipType!
-        let outcome = handleRaidOutcome(for: currentShipType)
-        
-        if outcome.success {
-            Globals.goldAmount += outcome.reward!
-            return "You successfully raided the \(currentShipType.name)! You gained \(outcome.reward!) gold."
-        } else {
-            Globals.shipCondition -= outcome.penalties!.condition
-            Globals.crewSatisfaction -= outcome.penalties!.satisfaction
-            Globals.goldAmount -= outcome.penalties!.goldLoss
-            return "You lost the battle against the \(currentShipType.name). Your ship condition decreased by \(outcome.penalties!.condition)%, crew satisfaction decreased by \(outcome.penalties!.satisfaction)%, and you lost \(outcome.penalties!.goldLoss) gold."
-        }
-    }(), options: [
+    gameData["raid_outcome"] = GameState(dialogue: Globals.raidOutcomeDialogue!, options: [
         "Restart": ("start", [])
     ])
     
@@ -102,6 +95,22 @@ func raidShipsGameData() -> [String: GameState] {
     ])
     
     return gameData
+}
+
+func raidDetermineOutcome() {
+    let currentShipType = Globals.currentShipType!
+    let outcome = handleRaidOutcome(for: currentShipType)
+    
+    if outcome.success {
+        Globals.goldAmount += outcome.reward!
+        Globals.raidOutcomeDialogue = "You successfully raided the \(currentShipType.name)! You gained \(outcome.reward!) gold."
+    } else {
+        Globals.shipCondition -= outcome.penalties!.condition
+        Globals.crewSatisfaction -= outcome.penalties!.satisfaction
+        Globals.goldAmount -= outcome.penalties!.goldLoss
+        Globals.raidOutcomeDialogue = "You lost the battle against the \(currentShipType.name). Your ship condition decreased by \(outcome.penalties!.condition)%, crew satisfaction decreased by \(outcome.penalties!.satisfaction)%, and you lost \(outcome.penalties!.goldLoss) gold."
+    }
+    NotificationCenter.default.post(name: .didUpdateRaidDialogueString, object: nil)
 }
 
 class GamePlay {

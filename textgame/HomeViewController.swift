@@ -63,6 +63,9 @@ class HomeViewController: UIViewController {
         updateGoldLabel() // Set initial gold amount
         // Observe changes to the gold amount
         NotificationCenter.default.addObserver(self, selector: #selector(updateGoldLabel), name: Notification.Name("GoldAmountUpdated"), object: nil)
+        
+        // Observe updates to raidOutcomeDialogue
+        NotificationCenter.default.addObserver(self, selector: #selector(updateRaidOutcomeDialogue), name: .didUpdateRaidDialogueString, object: nil)
     }
     
     deinit {
@@ -75,6 +78,14 @@ class HomeViewController: UIViewController {
         goldLabel.text = "Gold: \(Globals.goldAmount)"
     }
     
+    // Update the raid_outcome game state dialogue with update
+    @objc func updateRaidOutcomeDialogue(){
+        if let raidOutcomeDialogue = Globals.raidOutcomeDialogue {
+            currentGameData.updateValue(GameState(dialogue: raidOutcomeDialogue, options: [
+                "Restart": ("start", [])
+            ]), forKey: "raid_outcome")
+        }
+    }
     
     var currentStateKey: String = "start"
 
@@ -122,5 +133,4 @@ class HomeViewController: UIViewController {
         currentStateKey = nextState.nextState
         updateUI()
     }
-
 }
