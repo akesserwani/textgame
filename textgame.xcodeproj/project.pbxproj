@@ -20,6 +20,7 @@
 		51FE22FE2C50F9B30052BB27 /* MissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE22FD2C50F9B30052BB27 /* MissionViewController.swift */; };
 		51FE23002C51037F0052BB27 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE22FF2C51037F0052BB27 /* ItemDetailViewController.swift */; };
 		51FE23042C5114990052BB27 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE23032C5114990052BB27 /* Globals.swift */; };
+		5FADD3142C65E7B300FCF0ED /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FADD3122C65E7B300FCF0ED /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		51FE22FD2C50F9B30052BB27 /* MissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionViewController.swift; sourceTree = "<group>"; };
 		51FE22FF2C51037F0052BB27 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		51FE23032C5114990052BB27 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		5FADD3132C65E7B300FCF0ED /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				51FE22FF2C51037F0052BB27 /* ItemDetailViewController.swift */,
 				51FE23032C5114990052BB27 /* Globals.swift */,
 				51584B982C5A5C5500E035EC /* GamePlay.swift */,
+				5FADD3122C65E7B300FCF0ED /* Model.xcdatamodeld */,
 			);
 			path = textgame;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				51FE23042C5114990052BB27 /* Globals.swift in Sources */,
 				51FE22FE2C50F9B30052BB27 /* MissionViewController.swift in Sources */,
 				51C095F12C4E696200871780 /* HomeViewController.swift in Sources */,
+				5FADD3142C65E7B300FCF0ED /* Model.xcdatamodeld in Sources */,
 				51C095F72C4E711A00871780 /* StoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +397,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5FADD3122C65E7B300FCF0ED /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5FADD3132C65E7B300FCF0ED /* Model.xcdatamodel */,
+			);
+			currentVersion = 5FADD3132C65E7B300FCF0ED /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 51C095D12C4E63F200871780 /* Project object */;
 }
