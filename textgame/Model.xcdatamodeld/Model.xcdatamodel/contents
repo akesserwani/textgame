@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21H1320" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier=""/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21H1320" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PlayerShip" representedClassName=".PlayerShip" syncable="YES">
+        <attribute name="condition" attributeType="Integer 32" maxValueString="100" defaultValueString="100" usesScalarValueType="YES"/>
+        <attribute name="crewSatisfaction" attributeType="Integer 32" minValueString="0" maxValueString="100" defaultValueString="100" usesScalarValueType="YES"/>
+        <attribute name="goldAmount" attributeType="Integer 32" minValueString="0" defaultValueString="200" usesScalarValueType="YES"/>
+        <attribute name="playerShipType" attributeType="String" defaultValueString="standard"/>
+    </entity>
+</model>

@@ -21,6 +21,8 @@
 		51FE23002C51037F0052BB27 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE22FF2C51037F0052BB27 /* ItemDetailViewController.swift */; };
 		51FE23042C5114990052BB27 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE23032C5114990052BB27 /* Globals.swift */; };
 		5FADD3142C65E7B300FCF0ED /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FADD3122C65E7B300FCF0ED /* Model.xcdatamodeld */; };
+		5FADD31B2C65FCEF00FCF0ED /* PlayerShip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FADD3192C65FCEF00FCF0ED /* PlayerShip+CoreDataClass.swift */; };
+		5FADD31C2C65FCEF00FCF0ED /* PlayerShip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FADD31A2C65FCEF00FCF0ED /* PlayerShip+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		51FE22FF2C51037F0052BB27 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		51FE23032C5114990052BB27 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		5FADD3132C65E7B300FCF0ED /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		5FADD3192C65FCEF00FCF0ED /* PlayerShip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerShip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5FADD31A2C65FCEF00FCF0ED /* PlayerShip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerShip+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		51C095D02C4E63F200871780 = {
 			isa = PBXGroup;
 			children = (
+				5FADD3192C65FCEF00FCF0ED /* PlayerShip+CoreDataClass.swift */,
+				5FADD31A2C65FCEF00FCF0ED /* PlayerShip+CoreDataProperties.swift */,
 				51C095DB2C4E63F200871780 /* textgame */,
 				51C095DA2C4E63F200871780 /* Products */,
 			);
@@ -169,9 +175,11 @@
 				51C095DF2C4E63F200871780 /* SceneDelegate.swift in Sources */,
 				51584B992C5A5C5500E035EC /* GamePlay.swift in Sources */,
 				51FE23042C5114990052BB27 /* Globals.swift in Sources */,
+				5FADD31C2C65FCEF00FCF0ED /* PlayerShip+CoreDataProperties.swift in Sources */,
 				51FE22FE2C50F9B30052BB27 /* MissionViewController.swift in Sources */,
 				51C095F12C4E696200871780 /* HomeViewController.swift in Sources */,
 				5FADD3142C65E7B300FCF0ED /* Model.xcdatamodeld in Sources */,
+				5FADD31B2C65FCEF00FCF0ED /* PlayerShip+CoreDataClass.swift in Sources */,
 				51C095F72C4E711A00871780 /* StoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
